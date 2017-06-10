@@ -4,7 +4,9 @@
 ## Table of Contents
 1. [Introduction](#1-introduction)
 2. [Data Preprocessing](#2-data-preprocessing)
-3. [Strong and Emphasize](#Strong-and-Emphasize)
+3. [Shallow CNN Model](#3-shallow-cnn-model)
+4. [Ensemble Models](#4-ensemble-models)
+5. [Deeper CNN Model](#5-deeper-cnn-model)
 
 
 ## 1 Introdcution
@@ -64,16 +66,16 @@ The original dataset contains seven different classes including **'disgust'**. H
 <h5 align="center">Figure 6. Total Number of categories</h4>
 </p>
 
-## 3 Shallow Model
+## 3 Shallow CNN Model
 The first convolutional neural networks model is a 4-layer simple model. There are two convolutional layers and two densely  (fully) connected layers. For the simplicity, there is no regularization and dropout to avoid overfitting in this model.  The average accuracy for this simple model is around **62 %** between 3000 to 10000 iterations. 
 
 | Layer Name    | Output Size     | Process |
 |:-------------:|:---------------| :-------------|
 | conv1         | 24 x 24     	 |       filter =5x5 , stride =2, channels =16 |
-| conv1         | 12 x 12     	 |       filter =5x5 , stride =2, channels =36 |
+| conv2         | 12 x 12     	 |       filter =5x5 , stride =2, channels =36 |
 | dc1           | 128     	  | 
 | dc2           | 6     	 |       softmax,max pool |
-| **Flops** [ Ignore biases] ||1.1 x 10^6 |
+| **Flops** [ Ignore biases] ||3 x 10^6 |
 
 <p align="center">
 <img src="Images/layout2.png"  align="middle"/>
@@ -86,7 +88,7 @@ This is a very shallow network and relatively very easy to train. Here is the lo
 
 <p align="center">
 <img src="Images/curve.png"  align="middle"/>
-<h5 align="center">Figure 7. Loss curve and accuracy on the validation dataset on the left and the confusion matrix on the right figure.</h4>
+<h5 left="center">Figure 7. Loss curve and accuracy on the validation dataset on the left and the confusion matrix on the right figure.</h4>
 </p>
 
 ## 4 Ensemble Models
@@ -97,4 +99,28 @@ Instead of applying the best single model to predict the categories, I will use 
 <h5 align="center">Figure 8. Confusion matrix for ensemble models</h4>
 </p>
 
-## 5 
+## 5 Deeper CNN Model
+In the previous model, we don't consider dropout and regularization to avoid overfitting. In this model, we go one layer deeper and also use 30% dropout. 
+
+
+| Layer Name    | Output Size     | Process |
+|:-------------:|:---------------| :-------------|
+| conv1         | 24 x 24     	 |       filter =5x5 , stride =2, channels =32 |
+| conv2         | 12 x 12     	 |       filter =5x5 , stride =2, channels =64 |
+| conv3         | 6 x 6     	 |       filter =5x5 , stride =2, channels =64 |
+| dc1           | 128     	  | 
+| dc2           | 6     	 |       softmax,max pool |
+| **Flops** [ Ignore biases] ||1.2 x 10^7 |
+
+The second model is slightly better than the first one with an average accuracy of around **63.6%** compared to **~62 %** from the first model. But in terms of the amount of computation, only 1.6% increasement is not a good imporvement. Therefore, I look into the ensemble learning and the accuracy of the ensemble learning is about **65.9 %**. It is about 2.2% imporvement on accuracy compared to the first shallow CNN model. Accuracy on differentiating between `Sad` and `Neutral` gains a boost in this model. 
+
+<p align="center">
+<img src="Images/Ensemble2.png"  align="middle"/>
+<h5 align="center">Figure 9. Confusion matrix for ensemble deeper CNN models</h4>
+</p>
+This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let take a look at a few images in which the algorithm couldn't give the correct prediction. It is even hard for human to predict the category of some of the images shown in Figure 10.  
+
+<p align="center">
+<img src="Images/Wrong_prediction.png"  align="middle"/>
+<h5 align="left">Figure 10. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. ti</h4>
+</p>
