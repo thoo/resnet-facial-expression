@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Introduction](#1-introduction)
-2. [Data Preprocessing](#2-data-preprocessing)
+2. [Dataset](#2-dataset)
 3. [Shallow CNN Model](#3-shallow-cnn-model)
 4. [Ensemble Models](#4-ensemble-models)
 5. [Deeper CNN Model](#5-deeper-cnn-model)
@@ -11,7 +11,7 @@
 
 ## 1 Introdcution
 
-**Deep learning** has revitalized computer vision and enhanced the accuracy of machine interpretation on images in recent years. Especially convolutional neural networks (**CNN**) is so far the go-to machine learning algorithm  with [great preformance](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html). In this project, I build **CNN** models to classify the facial expression into six facial emotion categories such as happy (😄) , sad (😢), fear (😨) , surprise (😲), neutral (😐) and angry (😠). 
+**Deep learning** has revitalized computer vision and enhanced the accuracy of machine interpretation on images in recent years. Especially convolutional neural networks (**CNN**) is so far the go-to machine learning algorithm  with [great performance](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html). In this project, I build **CNN** models to classify the facial expression into six facial emotion categories such as happy (😄) , sad (😢), fear (😨) , surprise (😲), neutral (😐) and angry (😠). 
 
 ~~~
 label_dict={
@@ -28,42 +28,24 @@ The dataset is taken from [Kaggle Challenge](https://www.kaggle.com/c/challenges
 
 Facial expression recognition can bring the relationship between the human and machine closer. It has gained significant interest in socail behavioral science, clinical and security fields. 
 
-## 2 Data Preprocsessing
-The dataset 35,887 images with the resolution of 48x48 pixels. Each image is flatten to a single row with 2,304 columns and so there are 35,887 rows with 2,304 columns in a single **'csv'** file. The following figure is the preview of first 16 images in binary colormap with the class label below each image. 
-
+## 2 Dataset
+The dataset 35,887 images with the resolution of 48x48 pixels. There is a **train.csv** file which consists of three columns, 'emotion' , 'pixels' and 'Usage'. The 'emotion' column represents the label ranging from 0 to 6 representing the emotional categories. In the pixels column, the 48x48 matrix is flatten as a single string separated by spaces. 'Usage' column is just a label for the previous Kaggle Competition and it is not important here. Here is the distribution of the class labels.
 <p align="center">
 <img src="Images/original_data.png"  align="middle"/>
 <h5 align="center">Figure 1. First 16 images with their class label</h4>
-</p>
-
-As you can see from the first few images, this dataset needs some preprocessing. The third image from the left on the first row is even hard for a human to label the facial expression. Here we are only concerns about facial expression. We are only accounting for the facail landmarks. For instance, the second image from the left on the first row can be cropped around the face and we have all the information for the facial expression recognition. 
-
-I will realign and crop the face out on some of the images as first preprocessing steps. 
-Figure 2 illustrates how the process is carried out.  This image is not in the dataset. This is just for demonstration. The first on the left is the initial preprocess data and I extract the facial region using [openface preprocessing alignment script](https://github.com/cmusatyalab/openface/blob/master/util/align-dlib.py) based on **dlib** library. The middle image in the Figure 2. is a post-process image and the last image is how the machine interprets an image. You can see the darker color around the important landmarks and their locations can give the vital information about facial expression. The computer is comparing and analyzing these facial features and it is reasonable to align these landmarks from images to images so that `eye`, `nose` and `mouth` align for all images. This process is demonstrated in Figure 4.
-
-**`Get_face.ipynb`** file contains the preprocessing steps in details while **`Get_face-result.ipynb`** shows the visualization of some post-process images.
-
-<p align="center">
-<img src="Images/preprocess.jpg"  align="middle"/>
-<h5 align="center">Figure 3. Extract the facial region.</h4>
-</p>
-
-<p align="center">
-<img src="Images/rotation.png"  align="middle"/>
-<h5 align="center">Figure 4. Align the facial region.</h4>
 </p>
 
 
 The original dataset contains seven different classes including **'disgust'**. However, when we look at the distribution among different categories, **'disgust'** only accounts account for about 1.5% of the total dataset as shown in Figure 2. Therefore, I am going to drop this category. Here the `modified dataset` is the dataset after the data preprocessing step. 
 <p align="center">
 <img src="Images/Percentage.png"  align="middle"/>
-<h5 align="center">Figure 5. Data distribution among categories</h4>
+<h5 align="center">Figure 2. Data distribution among categories</h4>
 </p>
 
 
 <p align="center">
 <img src="Images/labels_dist_comb.png"  height=500 align="middle"/>
-<h5 align="center">Figure 6. Total Number of categories</h4>
+<h5 align="center">Figure 3. Total Number of categories</h4>
 </p>
 
 ## 3 Shallow CNN Model
@@ -79,7 +61,7 @@ The first convolutional neural networks model is a 4-layer simple model. There a
 
 <p align="center">
 <img src="Images/layout2.png"  align="middle"/>
-<h5 align="center">Figure 6. Architecture of a simple CNN</h4>
+<h5 align="center">Figure 4. Architecture of a simple CNN</h4>
 </p>
 
 This is a very shallow network and relatively very easy to train. Here is the loss curve and confusion matrix for this model. As we can conclude from this model, the prediction accurcy is high on `Happy`,`Surprise` and `Neutral` category. This CNN algorithm has hard time classifying `Angry`, `Sad` and `Fear` category and are quite often gotten confused with `Neutral` as illustrated in the confusion matrix. This model can be reimplemented by running `First Convolutional Neural Net-fv.ipynb`.  
@@ -88,7 +70,7 @@ This is a very shallow network and relatively very easy to train. Here is the lo
 
 <p align="center">
 <img src="Images/curve.png"  align="middle"/>
-<h5 left="center">Figure 7. Loss curve and accuracy on the validation dataset on the left and the confusion matrix on the right figure.</h4>
+<h5 left="center">Figure 5. Loss curve and accuracy on the validation dataset on the left and the confusion matrix on the right figure.</h4>
 </p>
 
 ## 4 Ensemble Models
@@ -96,7 +78,7 @@ Instead of applying the best single model to predict the categories, I will use 
 
 <p align="center">
 <img src="Images/Ensemble.png"  align="middle"/>
-<h5 align="center">Figure 8. Confusion matrix for ensemble models</h4>
+<h5 align="center">Figure 6. Confusion matrix for ensemble models</h4>
 </p>
 
 ## 5 Deeper CNN Model
@@ -116,11 +98,11 @@ The second model is slightly better than the first one with an average accuracy 
 
 <p align="center">
 <img src="Images/Ensemble2.png"  align="middle"/>
-<h5 align="center">Figure 9. Confusion matrix for ensemble deeper CNN models</h4>
+<h5 align="center">Figure 7. Confusion matrix for ensemble deeper CNN models</h4>
 </p>
 This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let take a look at a few images in which the algorithm couldn't give the correct prediction. It is even hard for human to predict the category of some of the images shown in Figure 10.  
 
 <p align="center">
 <img src="Images/Wrong_prediction.png"  align="middle"/>
-<h5 align="left">Figure 10. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. ti</h4>
+<h5 align="left">Figure 8. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. ti</h4>
 </p>
