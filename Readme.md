@@ -24,7 +24,7 @@ label_dict={
  }
 ~~~
 
-The dataset is taken from [Kaggle Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).  I train three different **CNN** models: 2-layer model, 3-layer model with dropout to prevent overfitting, and 34-layer residual networks model. 
+The dataset is taken from [Kaggle Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/leaderboard).  I train three different **CNN** models: 4-layer model and  5-layer model with dropout to prevent overfitting.
 
 Facial expression recognition can bring the relationship between the human and machine closer. It has gained significant interest in socail behavioral science, clinical and security fields. 
 
@@ -104,5 +104,6 @@ This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let
 
 <p align="center">
 <img src="Images/Wrong_prediction.png"  align="middle"/>
-<h5 align="left">Figure 8. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. ti</h4>
+<h5 align="left">Figure 8. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. </h4>
 </p>
+
