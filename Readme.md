@@ -108,7 +108,7 @@ This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let
 </p>
 
 ## Residual Neural Network
-`Deep Convolutional Neural Net Model.ipynb` contains how to setup and run 34-layer residual neural network introduced by [Kaiming He](https://github.com/KaimingHe/deep-residual-networks/commits/master)
+`Deep Convolutional Neural Net Model.ipynb` contains how to setup and run 34-layer residual neural network introduced by [Kaiming He](https://github.com/KaimingHe/deep-residual-networks/commits/master).
 
 <p align="center">
 <img src="Images/curve3.png"  align="middle"/>
