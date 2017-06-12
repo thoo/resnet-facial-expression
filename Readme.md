@@ -100,7 +100,7 @@ The second model is slightly better than the first one with an average accuracy 
 <img src="Images/Ensemble2.png"  align="middle"/>
 <h5 align="center">Figure 7. Confusion matrix for ensemble deeper CNN models</h4>
 </p>
-This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let take a look at a few images in which the algorithm couldn't give the correct prediction. It is even hard for human to predict the category of some of the images shown in Figure 10.  
+This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let take a look at a few images in which the algorithm couldn't give the correct prediction. It is even hard for human to predict the category of some of the images shown in Figure 8.  
 
 <p align="center">
 <img src="Images/Wrong_prediction1.jpg"  align="middle"  />
