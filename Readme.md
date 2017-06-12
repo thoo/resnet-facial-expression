@@ -107,3 +107,11 @@ This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let
 <h5 align="left">Figure 8. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. </h4>
 </p>
 
+## Residual Neural Network
+`Deep Convolutional Neural Net Model.ipynb` contains how to setup and run 34-layer residual neural network introduced by [Kaiming He](https://github.com/KaimingHe/deep-residual-networks/commits/master)
+
+<p align="center">
+<img src="Images/curve3.png"  align="middle"/>
+<h5 left="center">Figure 9. Loss curve and accuracy on the validation dataset on the left and the confusion matrix on the right figure.</h4>
+</p>
+
