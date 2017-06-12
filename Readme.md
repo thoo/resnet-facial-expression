@@ -103,7 +103,7 @@ The second model is slightly better than the first one with an average accuracy 
 This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let take a look at a few images in which the algorithm couldn't give the correct prediction. It is even hard for human to predict the category of some of the images shown in Figure 10.  
 
 <p align="center">
-<img src="Images/Wrong_prediction.png"  align="middle" height=600 />
+<img src="Images/Wrong_prediction1.jpg"  align="middle"  />
 <h5 align="left">Figure 8. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. </h4>
 </p>
 
