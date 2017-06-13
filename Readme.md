@@ -6,7 +6,8 @@
 2. [Dataset](#2-dataset)
 3. [Shallow CNN Model](#3-shallow-cnn-model)
 4. [Ensemble Models](#4-ensemble-models)
-5. [Deeper CNN Model](#5-deeper-cnn-model)
+5. [Wider CNN Model](#5-wider-cnn-model)
+6. [Residual Neural Network](#6-residual-neural-network)
 
 
 ## 1 Introdcution
@@ -81,7 +82,7 @@ Instead of applying the best single model to predict the categories, I will use 
 <h5 align="center">Figure 6. Confusion matrix for ensemble models</h4>
 </p>
 
-## 5 Deeper CNN Model
+## 5 Wider CNN Model
 In the previous model, we don't consider dropout and regularization to avoid overfitting. In this model, we go one layer deeper and also use 30% dropout. 
 
 
@@ -107,7 +108,7 @@ This model is demonstrated in `Second Convolutional Neural Net Model.ipynb`. Let
 <h5 align="left">Figure 8. Images where the model predicted incorrectly. In the caption below each image, the label is on the left and the prediction is on the right. </h4>
 </p>
 
-## Residual Neural Network
+## 6 Residual Neural Network
 `Deep Convolutional Neural Net Model.ipynb` contains how to setup and run 34-layer residual neural network introduced by [Kaiming He](https://github.com/KaimingHe/deep-residual-networks/commits/master).
 
 <p align="center">
