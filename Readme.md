@@ -54,8 +54,8 @@ The first convolutional neural networks model is a 4-layer simple model. There a
 
 | Layer Name    | Output Size     | Process |
 |:-------------:|:---------------| :-------------|
-| conv1         | 24 x 24     	 |       filter =5x5 , stride =2, channels =16 |
-| conv2         | 12 x 12     	 |       filter =5x5 , stride =2, channels =36 |
+| conv1         | 24 x 24     	 |       filter =5x5 , conv\_stride=1, max\_pool \_stride =2, channels =16 |
+| conv2         | 12 x 12     	 |       filter =5x5 , conv\_stride=1, max\_pool \_stride =2, channels =36 |
 | dc1           | 128     	  | 
 | dc2           | 6     	 |       softmax,max pool |
 | **Flops** [ Ignore biases] ||3 x 10^6 |
@@ -88,9 +88,9 @@ In the previous model, we don't consider dropout and regularization to avoid ove
 
 | Layer Name    | Output Size     | Process |
 |:-------------:|:---------------| :-------------|
-| conv1         | 24 x 24     	 |       filter =5x5 , stride =2, channels =32 |
-| conv2         | 12 x 12     	 |       filter =5x5 , stride =2, channels =64 |
-| conv3         | 6 x 6     	 |       filter =5x5 , stride =2, channels =64 |
+| conv1         | 24 x 24     	 |       filter =5x5 , conv\_stride=1,max\_pool \_stride =2, channels =32 |
+| conv2         | 12 x 12     	 |       filter =5x5 , conv\_stride=1,max\_pool \_stride =2, channels =64 |
+| conv3         | 6 x 6     	 |       filter =5x5 , conv\_stride=1,max\_pool \_stride =2, channels =64 |
 | dc1           | 128     	  | 
 | dc2           | 6     	 |       softmax,max pool |
 | **Flops** [ Ignore biases] ||1.2 x 10^7 |
