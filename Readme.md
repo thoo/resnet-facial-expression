@@ -42,7 +42,7 @@ Figure 2 illustrates how the process is carried out.  This image is not in the d
 **`Get_face.ipynb`** file contains the preprocessing steps in details while **`Get_face-result.ipynb`** shows the visualization of some post-process images.
 
 <p align="center">
-<img src=" Images/preprocess.jpg"  align="middle"/>
+<img src="Images/preprocess.png"  align="middle"/>
 <h5 align="center">Figure 3. Extract the facial region.</h4>
 </p>
 
