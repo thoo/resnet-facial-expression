@@ -67,7 +67,7 @@ The original dataset contains seven different classes including **'disgust'**. H
 <h5 align="center">Figure 6. Total Number of categories</h4>
 </p>
 
-## 3 Shallow Model
+## 3 Shallow CNN Model
 The first convolutional neural networks model is a 4-layer simple model. There are two convolutional layers and two densely  (fully) connected layers. For the simplicity, there is no regularization and dropout to avoid overfitting in this model.  The average accuracy for this simple model is around **62 %** between 3000 to 10000 iterations. 
 
 | Layer Name    | Output Size     | Process |
