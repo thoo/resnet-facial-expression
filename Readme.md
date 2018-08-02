@@ -3,8 +3,11 @@
 
 ## Table of Contents
 1. [Introduction](#1-introduction)
-2. [Data Preprocessing](#2-data-preprocessing)
-3. [Strong and Emphasize](#Strong-and-Emphasize)
+2. [Dataset](#2-dataset)
+3. [Shallow CNN Model](#3-shallow-cnn-model)
+4. [Ensemble Models](#4-ensemble-models)
+5. [Wider CNN Model](#5-wider-cnn-model)
+6. [Residual Neural Network](#6-residual-neural-network)
 
 
 ## 1 Introdcution
