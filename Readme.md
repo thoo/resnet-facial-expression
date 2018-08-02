@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Introduction](#1-introduction)
-2. [Dataset](#2-dataset)
+2. [Data Preprocessing](#2-data-preprocessing)
 3. [Shallow CNN Model](#3-shallow-cnn-model)
 4. [Ensemble Models](#4-ensemble-models)
 5. [Wider CNN Model](#5-wider-cnn-model)
